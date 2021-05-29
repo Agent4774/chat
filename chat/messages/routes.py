@@ -21,7 +21,7 @@ def chat():
 		)
 
 @socketio.on('message_request')
-@cross_origin
+@cross_origin()
 def message_request(json, methods=['GET', 'POST']):
 		message = Message(
 			text=escape(json['text']),
