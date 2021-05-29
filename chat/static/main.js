@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	let socketIO = io.connect(`https://${document.domain}`)
+	let socketIO = io.connect(`https://${document.domain}:${location.port}`)
 
 	$('.message-field').focus();
 	$('.message-display').scrollTop($('.message-display').prop('scrollHeight'));	
