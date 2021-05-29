@@ -2,6 +2,7 @@ from .forms import MessageForm
 from .models import Message
 from chat import app, db, socketio
 from flask import render_template, request, escape
+from flask_cors import cross_origin
 from flask_login import current_user, login_required
 import json
 
@@ -20,6 +21,7 @@ def chat():
 		)
 
 @socketio.on('message_request')
+@cross_origin
 def message_request(json, methods=['GET', 'POST']):
 		message = Message(
 			text=escape(json['text']),
