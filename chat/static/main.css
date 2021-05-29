@@ -1,0 +1,30 @@
+.message{
+	max-width: 98.4%;
+	word-wrap: break-word;
+}
+
+.message span{
+	font-weight: bold;
+}
+
+.message-display{
+	height: 350px;
+	width: 98.4%;
+	padding: 10px 0;
+	overflow: auto;
+	max-height: 425px;
+	border: 1px solid #808080;
+	border-radius: 5px;
+	padding: 10px 10px;
+}
+
+.message-field{
+	width:  98.4%;
+	height: 60px;
+	resize: none;
+	outline: none;
+	border-radius: 5px;
+	border-color: #808080;
+	margin-top: 10px;
+	padding: 10px 10px;
+}

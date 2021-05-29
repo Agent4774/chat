@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block main %}
+	<h1>Welcome to chat!</h1>
+	<div class="message-display">
+		{% if messages %}
+			{% for message in messages %}
+				<div>
+					<small>{{ message.created.strftime('%H:%M:%S') }}</small>
+					<span style="font-weight: bold;">{{ message.author.username }}:</span> {{ message.text }}
+				</div>
+				<hr>
+			{% endfor %}
+		{% endif %}
+	</div>
+	<div class="message-input">
+		<form method="POST" id="message-form">
+			{{ form.hidden_tag() }}
+			{{ form.message(class="message-field") }}<br>
+		</form>
+		<button class="send-btn">Send</button>
+	</div>
+{% endblock %}
