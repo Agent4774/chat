@@ -25,7 +25,7 @@
 		{% endif %}
 		{{ form.password }}<br>
 
-		{{ form.submit }}
+		{{ form.submit(class="btn btn-info mt-3") }}
 	</form>
 	<p>Are you a member yet? <a href="{{ url_for('sign_up') }}">Sign up</a></p>
 {% endblock %}

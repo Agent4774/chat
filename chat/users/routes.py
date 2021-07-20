@@ -51,5 +51,4 @@ def sign_in():
 @app.route('/log-out', methods=['GET'])
 def log_out():
 		logout_user()
-		title = 'Chat | Log out'
-		return render_template('users/logout.html', title=title)
+		return redirect(url_for('sign_in'))

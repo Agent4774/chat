@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block main %}
-	<h1>Welcome to chat!</h1>
-	<div class="message-display">
+	<div class="message-display mt-3">
 		{% if messages %}
 			{% for message in messages %}
 				<div>
@@ -22,6 +21,6 @@
 			{{ form.hidden_tag() }}
 			{{ form.message(class="message-field") }}<br>
 		</form>
-		<button class="send-btn">Send</button>
+		<button class="send-btn btn btn-info">Send</button>
 	</div>
 {% endblock %}
