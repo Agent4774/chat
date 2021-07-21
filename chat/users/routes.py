@@ -26,7 +26,7 @@ def sign_up():
 				)
 				db.session.add(user)
 				db.session.commit()
-				flash('Congrats! You have been signed up! Please, log in')
+				flash('Congrats! You have been signed up! Please, log in', 'success')
 				return redirect(url_for('sign_in'))
 		return render_template('users/sign_up.html', title=title, form=form)
 
@@ -39,10 +39,10 @@ def sign_in():
 		if form.validate_on_submit():
 				user = User.query.filter_by(username=form.username.data).first()
 				if not user:
-						flash('Invalid username or password')
+						flash('Invalid username or password', 'danger')
 						return redirect(url_for('sign_in'))
 				if not check_password_hash(user.password, form.password.data):
-						flash('Invalid username or password')
+						flash('Invalid username or password', 'danger')
 						return redirect(url_for('sign_in'))
 				login_user(user)
 				return redirect(url_for('chat'))

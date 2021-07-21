@@ -4,7 +4,6 @@ from chat import app, db, socketio
 from flask import render_template, request, escape
 from flask_cors import cross_origin
 from flask_login import current_user, login_required
-import json
 
 
 @app.route('/chat', methods=['GET', 'POST'])
@@ -23,7 +22,7 @@ def chat():
 @socketio.on('message_request')
 def message_request(json, methods=['GET', 'POST']):
 		message = Message(
-			text=escape(json['text']),
+			text=json['text'],
 			user_id=current_user.id
 		)
 		db.session.add(message)
