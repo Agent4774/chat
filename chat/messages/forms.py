@@ -3,4 +3,4 @@ from wtforms import TextAreaField
 
 
 class MessageForm(FlaskForm):
-		message = TextAreaField()
+	message = TextAreaField()
